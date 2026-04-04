@@ -1,7 +1,82 @@
+/* ===== SERVICES HERO - compact, NOT full viewport ===== */
+.services-hero {
+  position: relative;
+  padding: 6rem 0 5rem;
+  overflow: hidden;
+  background: #f4f8fb;
+}
+
+.services-hero__bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.services-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.services-hero__overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    to right,
+    #f4f8fb 0%,
+    #f4f8fb 25%,
+    rgba(244,248,251,0.95) 35%,
+    rgba(244,248,251,0.7) 50%,
+    rgba(244,248,251,0.25) 65%,
+    transparent 80%
+  );
+}
+
+.services-hero__inner {
+  position: relative;
+  z-index: 10;
+}
+
+.services-hero__text {
+  max-width: 480px;
+  width: 45%;
+  min-width: 300px;
+}
+
+.services-hero__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.12;
+  margin-bottom: 1rem;
+}
+
+.services-hero__desc {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.services-hero__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  line-height: 0;
+}
+
+.services-hero__wave svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
 /* ===== Hero Trust Badges ===== */
 .hero-trust-badges {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-top: 2rem;
   flex-wrap: wrap;
 }
@@ -13,8 +88,8 @@
 }
 
 .hero-trust-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -27,12 +102,12 @@
 
 .hero-trust-badge strong {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-dark);
 }
 
 .hero-trust-badge span {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
 }
 
@@ -40,18 +115,18 @@
 .services-list {
   position: relative;
   z-index: 20;
-  margin-top: -2rem;
+  margin-top: -3rem; /* Overlaps hero wave */
   padding-bottom: 2rem;
 }
 
 .services-grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .service-vcard {
-  padding: 2rem 1.5rem;
+  padding: 1.75rem 1.25rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -61,29 +136,29 @@
 }
 
 .service-vcard__icon {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .service-vcard__icon.blue-light { background: #e3f2fd; }
 .service-vcard__icon.green-light { background: #e8f5e9; }
 
 .service-vcard h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
 .service-vcard p {
   color: var(--text-body);
-  font-size: 0.88rem;
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
   flex: 1;
 }
 
@@ -91,10 +166,10 @@
   background: transparent;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-full);
-  padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--primary);
   cursor: pointer;
   font-family: inherit;
   transition: all var(--transition);
@@ -102,13 +177,15 @@
 
 .learn-more-btn:hover {
   border-color: var(--primary);
-  color: var(--primary);
   background: #e3f2fd;
 }
 
 /* ===== Trust Features Bar ===== */
 .services-trust {
-  padding: 2rem 0 3rem;
+  background: rgba(244,248,251,0.5); /* match mockup soft grey */
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(0,0,0,0.03);
+  border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
 .services-trust__grid {
@@ -119,47 +196,49 @@
 
 .services-trust__item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
 }
 
 .services-trust__icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #e8f5e9;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
+/* Alternate colors matching mockup */
+.services-trust__item:nth-child(odd) .services-trust__icon { background: var(--primary); }
+.services-trust__item:nth-child(even) .services-trust__icon { background: var(--secondary); }
 
 .services-trust__item strong {
   display: block;
-  font-size: 0.9rem;
-  margin-bottom: 0.15rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.1rem;
 }
 
 .services-trust__item span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   line-height: 1.4;
 }
 
 /* ===== CTA Banner ===== */
 .services-cta {
-  padding: 0 0 4rem;
+  padding: 3rem 0;
 }
 
 .services-cta__card {
-  background: var(--gradient);
+  background: linear-gradient(135deg, #0d47a1 0%, #1e88e5 50%, #2ecc71 100%);
   border-radius: var(--radius-lg);
-  padding: 2.25rem 2.5rem;
+  padding: 2rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
-  box-shadow: 0 10px 40px rgba(30,136,229,0.25);
+  box-shadow: 0 10px 30px rgba(30,136,229,0.2);
 }
 
 .services-cta__left {
@@ -179,8 +258,8 @@
   flex-shrink: 0;
 }
 
-.services-cta__left h2 { font-size: 1.3rem; margin-bottom: 0.2rem; }
-.services-cta__left p { opacity: 0.9; font-size: 0.9rem; }
+.services-cta__left h2 { font-size: 1.25rem; margin-bottom: 0.15rem; }
+.services-cta__left p { opacity: 0.9; font-size: 0.85rem; margin: 0; }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
@@ -192,6 +271,12 @@
   .services-grid-4 { grid-template-columns: 1fr; }
   .services-trust__grid { grid-template-columns: 1fr; }
   .hero-trust-badges { flex-direction: column; gap: 0.75rem; }
-  .services-cta__card { flex-direction: column; text-align: center; padding: 2rem; gap: 1.5rem; }
+  .services-cta__card { flex-direction: column; text-align: center; padding: 1.5rem; gap: 1.5rem; }
   .services-cta__left { flex-direction: column; }
+  
+  .services-hero__text { width: 100%; max-width: 100%; }
+  .services-hero__title { font-size: 2rem; }
+  .services-hero__overlay {
+    background: linear-gradient(to bottom, rgba(244,248,251,0.95) 0%, rgba(244,248,251,0.7) 100%);
+  }
 }
