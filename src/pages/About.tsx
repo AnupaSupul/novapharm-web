@@ -1,40 +1,49 @@
-import React from 'react';
-import { Target, Eye, Shield, Users, Clock, ThumbsUp } from 'lucide-react';
 import './About.css';
 
-const About: React.FC = () => {
+const About = () => {
   return (
-    <div className="about-page">
+    <div className="about">
       {/* Hero */}
-      <section className="page-hero subtle-3d" style={{backgroundImage: "url('/images/hero-about.jpg')"}}>
-        <div className="container relative z-10">
-          <span className="section-subtitle text-gradient">ABOUT US</span>
-          <h1 className="page-title">Caring for you,<br/>every step of the way.</h1>
-          <p className="page-description">
+      <section className="page-hero">
+        <div className="page-hero__bg">
+          <img src="/hero-about.png" alt="About NovaPharm" />
+        </div>
+        <div className="page-hero__overlay"></div>
+        <div className="container page-hero__inner">
+          <span className="section-label text-gradient">ABOUT US</span>
+          <h1 className="page-hero__title">Caring for you,<br/><span className="text-gradient">every step of the way.</span></h1>
+          <p className="page-hero__desc">
             At NovaPharm, we believe that good health is the foundation of a happy life. We are committed to providing trusted medicines, expert advice, and wellness solutions that help you and your family live healthier, better lives.
           </p>
+          <p className="page-hero__tagline">💚 Better health starts here. 💚💙</p>
         </div>
       </section>
 
-      {/* Mission Vision */}
-      <section className="mission-vision section" style={{marginTop: '-6rem', paddingTop: 0}}>
+      {/* Mission / Vision */}
+      <section className="mv-section">
         <div className="container">
           <div className="mv-grid">
-            <div className="mv-card glass-card hover-lift">
-              <div className="mv-icon green-gradient"><Target color="white" size={32} /></div>
+            <div className="mv-card glass-card">
+              <div className="icon-circle green" style={{width:56,height:56}}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+              </div>
               <div>
-                <h3 className="text-secondary">Our Mission</h3>
+                <h3 style={{color:'var(--secondary)'}}>Our Mission</h3>
                 <p>To deliver quality healthcare products with honest care, improving lives every day.</p>
               </div>
             </div>
-            <div className="mv-card-center glass-card subtle-3d">
-              <h2 className="text-gradient" style={{fontSize: '2rem', marginBottom: '1rem'}}>NovaPharm</h2>
+
+            <div className="mv-center glass-card">
+              <img src="/logo.png" alt="NovaPharm" style={{height:48,marginBottom:'1rem'}} />
               <p>NovaPharm is your trusted neighborhood pharmacy, dedicated to providing reliable medicines, professional guidance, and compassionate care.</p>
             </div>
-            <div className="mv-card glass-card hover-lift">
-              <div className="mv-icon blue-gradient"><Eye color="white" size={32} /></div>
+
+            <div className="mv-card glass-card">
+              <div className="icon-circle blue" style={{width:56,height:56}}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
               <div>
-                <h3 className="text-primary">Our Vision</h3>
+                <h3 style={{color:'var(--primary)'}}>Our Vision</h3>
                 <p>To be your most trusted health partner in the community, known for care, quality, and convenience.</p>
               </div>
             </div>
@@ -43,35 +52,49 @@ const About: React.FC = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-choose-us section" style={{background: 'linear-gradient(to bottom, #ffffff, #f8fafc)'}}>
+      <section className="why-us section" style={{background:'linear-gradient(to bottom, #fff, var(--bg))'}}>
         <div className="container">
-          <div style={{textAlign: 'center', marginBottom: '3rem'}}>
-            <span className="section-subtitle text-gradient">WHY CHOOSE NOVAPHARM?</span>
-            <h2 className="section-title">Trusted Quality & Care</h2>
+          <div className="why-us__header">
+            <div className="why-us__line"></div>
+            <h2 className="why-us__title">WHY CHOOSE <span className="text-gradient">NOVAPHARM?</span></h2>
+            <div className="why-us__line"></div>
           </div>
-          
-          <div className="grid grid-cols-4 gap-6">
-            <div className="feature-card glass-card hover-lift">
-              <Shield size={40} className="text-primary" style={{marginBottom: '1rem'}} />
-              <h3>Trusted Quality</h3>
-              <p>We source medicines only from reliable and certified brands.</p>
-            </div>
-            <div className="feature-card glass-card hover-lift">
-              <Users size={40} className="text-secondary" style={{marginBottom: '1rem'}} />
-              <h3>Expert Pharmacists</h3>
-              <p>Our professionals provide the right advice for your health.</p>
-            </div>
-            <div className="feature-card glass-card hover-lift">
-              <ThumbsUp size={40} className="text-primary" style={{marginBottom: '1rem'}} />
-              <h3>Customer Care</h3>
-              <p>Your health and satisfaction are our top priorities.</p>
-            </div>
-            <div className="feature-card glass-card hover-lift">
-              <Clock size={40} className="text-secondary" style={{marginBottom: '1rem'}} />
-              <h3>Fast & Reliable</h3>
-              <p>Quick service and easy access to the medicines you need.</p>
-            </div>
+          <div className="why-us__grid">
+            {[
+              { icon: '🛡️', title: 'Trusted Quality', desc: 'We source medicines only from reliable and certified brands.', color: 'blue' },
+              { icon: '👨‍⚕️', title: 'Expert Pharmacists', desc: 'Our professionals provide the right advice for your health.', color: 'green' },
+              { icon: '❤️', title: 'Customer Care', desc: 'Your health and satisfaction are our top priorities.', color: 'blue' },
+              { icon: '⚡', title: 'Fast & Reliable', desc: 'Quick service and easy access to the medicines you need.', color: 'green' },
+            ].map((item, i) => (
+              <div key={i} className="feature-card glass-card">
+                <div className={`feature-card__icon icon-circle ${item.color}`}>
+                  <span style={{fontSize:'1.5rem'}}>{item.icon}</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Stats Banner */}
+      <section className="about-stats-banner">
+        <div className="container about-stats-banner__inner">
+          {[
+            { num: '100+', label: 'Medicines Available', icon: '💊' },
+            { num: '10+', label: 'Expert Pharmacists', icon: '👨‍⚕️' },
+            { num: '5000+', label: 'Happy Customers', icon: '😊' },
+            { num: '24/7', label: 'Care & Support', icon: '🕐' },
+          ].map((s, i) => (
+            <div key={i} className="about-stat-item">
+              <span className="about-stat-icon">{s.icon}</span>
+              <div>
+                <h3>{s.num}</h3>
+                <p>{s.label}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

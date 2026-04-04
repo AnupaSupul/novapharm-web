@@ -1,119 +1,141 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Phone, MessageCircle, MapPin, ShieldCheck, UserCheck, HeartPulse, Truck, ArrowRight } from 'lucide-react';
 import './Home.css';
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
-    <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero-section subtle-3d">
-        <div className="container hero-container relative z-10">
-          <div className="hero-content">
-            <div className="hero-badge glass">
-              <HeartPulse size={16} className="text-secondary" />
-              <span>Your Health Partner</span>
+    <div className="home">
+      {/* ===== HERO ===== */}
+      <section className="hero">
+        <div className="hero__bg">
+          <img src="/hero-home.png" alt="NovaPharm Pharmacy" />
+        </div>
+        <div className="hero__overlay"></div>
+        <div className="container hero__inner">
+          <div className="hero__content">
+            <div className="hero__badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>YOUR HEALTH PARTNER</span>
             </div>
-            <h1 className="hero-title">
-              Better health <br />
+            <h1 className="hero__title">
+              Better health<br/>
               <span className="text-gradient">starts here.</span>
+              <span className="hero__emoji">💚💙</span>
             </h1>
-            <p className="hero-subtitle">
+            <p className="hero__desc">
               Trusted medicines, expert care, and total wellness solutions for you and your family.
             </p>
-            <div className="hero-actions">
-              <button className="btn btn-primary lg-btn">
-                <Phone size={18} /> Call Now
-              </button>
-              <button className="btn btn-whatsapp lg-btn glass">
-                <MessageCircle size={18} /> WhatsApp
-              </button>
-              <button className="btn btn-location lg-btn glass">
-                <MapPin size={18} /> Visit Us
-              </button>
+            <div className="hero__buttons">
+              <a href="tel:+94123456789" className="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call Now
+              </a>
+              <a href="#" className="btn btn-glass" style={{color:'var(--secondary-dark)'}}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--secondary)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+              </a>
+              <a href="#" className="btn btn-glass" style={{color:'var(--primary-dark)'}}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Visit Us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Info bar at bottom of hero */}
+        <div className="hero__info-bar">
+          <div className="container hero__info-inner">
+            <div className="hero__info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>+94 123 456 789</strong>
+                <span>Call us anytime</span>
+              </div>
+            </div>
+            <div className="hero__info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Negombo, Sri Lanka</strong>
+                <span>Find us easily</span>
+              </div>
+            </div>
+            <div className="hero__info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>Open 24/7</strong>
+                <span>We're always here</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features-section section">
+      {/* ===== FEATURES ===== */}
+      <section className="features">
         <div className="container">
-          <div className="features-grid">
-            <div className="feature-card glass-card hover-lift">
-              <div className="feature-icon-wrapper blue-gradient">
-                <ShieldCheck size={32} color="white" />
+          <div className="features__grid">
+            {[
+              { icon: '🛡️', title: 'Trusted Medicines', desc: 'Quality medicines from reliable brands.', color: 'blue' },
+              { icon: '👨‍⚕️', title: 'Expert Pharmacists', desc: 'Professional advice for your better health.', color: 'green' },
+              { icon: '💊', title: 'Wellness Products', desc: 'Supplements & essentials for a healthy life.', color: 'blue' },
+              { icon: '🚚', title: 'Fast & Reliable', desc: 'Quick delivery to your doorstep.', color: 'green' },
+            ].map((f, i) => (
+              <div key={i} className="feature-card glass-card">
+                <div className={`feature-card__icon icon-circle ${f.color}`}>
+                  <span style={{fontSize:'1.5rem'}}>{f.icon}</span>
+                </div>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
               </div>
-              <h3>Trusted Medicines</h3>
-              <p>Quality medicines from reliable brands.</p>
-            </div>
-            <div className="feature-card glass-card hover-lift">
-              <div className="feature-icon-wrapper green-gradient">
-                <UserCheck size={32} color="white" />
-              </div>
-              <h3>Expert Pharmacists</h3>
-              <p>Professional advice for your better health.</p>
-            </div>
-            <div className="feature-card glass-card hover-lift">
-              <div className="feature-icon-wrapper blue-gradient">
-                <HeartPulse size={32} color="white" />
-              </div>
-              <h3>Wellness Products</h3>
-              <p>Supplements & essentials for a healthy life.</p>
-            </div>
-            <div className="feature-card glass-card hover-lift">
-              <div className="feature-icon-wrapper green-gradient">
-                <Truck size={32} color="white" />
-              </div>
-              <h3>Fast Delivery</h3>
-              <p>Quick delivery right to your doorstep.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About Preview Section */}
+      {/* ===== ABOUT PREVIEW ===== */}
       <section className="about-preview section">
-        <div className="container">
-          <div className="about-grid">
-            <div className="about-content">
-              <span className="section-subtitle text-gradient">ABOUT NOVAPHARM</span>
-              <h2 className="section-title">Caring for you, every step of the way.</h2>
-              <p className="section-description">
-                NovaPharm is committed to providing trusted medicines, expert advice, and wellness solutions to help you live a healthier, happier life. We believe in high-quality healthcare that is accessible to everyone in our community.
-              </p>
-              <NavLink to="/about" className="btn btn-primary hover-lift mt-4">
-                Learn More <ArrowRight size={18} style={{marginLeft: '8px'}} />
-              </NavLink>
+        <div className="container about-preview__inner">
+          <div className="about-preview__text">
+            <span className="section-label text-gradient">ABOUT NOVAPHARM</span>
+            <h2 className="section-title">Caring for you,<br/><span className="text-gradient">every step of the way.</span></h2>
+            <p className="section-desc">
+              NovaPharm is committed to providing trusted medicines, expert advice, and wellness solutions to help you live a healthier, happier life.
+            </p>
+            <NavLink to="/about" className="btn btn-primary" style={{marginTop: '1.5rem'}}>
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </NavLink>
+          </div>
+          <div className="about-preview__stats">
+            <div className="stat-card glass-card">
+              <h3 className="stat-card__number" style={{color:'var(--primary)'}}>100+</h3>
+              <p>Medicines<br/>Available</p>
             </div>
-            <div className="about-stats">
-              <div className="stat-card glass-card hover-lift">
-                <h3 className="stat-number text-primary">100+</h3>
-                <p className="stat-label">Medicines Available</p>
-              </div>
-              <div className="stat-card glass-card hover-lift">
-                <h3 className="stat-number text-secondary">10+</h3>
-                <p className="stat-label">Expert Pharmacists</p>
-              </div>
-              <div className="stat-card glass-card hover-lift">
-                <h3 className="stat-number text-gradient">5000+</h3>
-                <p className="stat-label">Happy Customers</p>
-              </div>
+            <div className="stat-card glass-card">
+              <h3 className="stat-card__number" style={{color:'var(--secondary)'}}>10+</h3>
+              <p>Expert<br/>Pharmacists</p>
+            </div>
+            <div className="stat-card glass-card stat-card--wide">
+              <h3 className="stat-card__number text-gradient">5000+</h3>
+              <p>Happy<br/>Customers</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-section">
+      {/* ===== CTA ===== */}
+      <section className="home-cta">
         <div className="container">
-          <div className="cta-card subtle-3d">
-            <div className="cta-content">
+          <div className="home-cta__card">
+            <div className="home-cta__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div className="home-cta__text">
               <h2>Your health is our priority.</h2>
               <p>Visit NovaPharm today for trusted care and better living.</p>
             </div>
-            <NavLink to="/services" className="btn btn-white hover-lift">
-              Explore Services <ArrowRight size={18} style={{marginLeft: '8px'}} />
+            <NavLink to="/services" className="btn btn-white">
+              Explore Services
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </NavLink>
           </div>
         </div>

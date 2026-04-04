@@ -1,60 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Phone, Menu, X, HeartPulse } from 'lucide-react';
 import './Navbar.css';
 
-const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled glass' : ''}`}>
-      <div className="container navbar-container">
-        <NavLink to="/" className="logo-link">
-          <HeartPulse className="logo-icon" size={32} />
-          <span className="logo-text">Nova<span className="text-secondary">Pharm</span></span>
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+      <div className="container navbar__inner">
+        <NavLink to="/" className="navbar__logo">
+          <img src="/logo.png" alt="NovaPharm" className="navbar__logo-img" />
         </NavLink>
 
-        <div className="nav-links desktop-only">
-          <NavLink to="/" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Home</NavLink>
-          <NavLink to="/about" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>About</NavLink>
-          <NavLink to="/services" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Services</NavLink>
-          <NavLink to="/products" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Products</NavLink>
-          <NavLink to="/contact" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Contact</NavLink>
+        <ul className="navbar__links">
+          <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
+          <li><NavLink to="/about" className={({isActive}) => isActive ? 'active' : ''}>About</NavLink></li>
+          <li><NavLink to="/services" className={({isActive}) => isActive ? 'active' : ''}>Services</NavLink></li>
+          <li><NavLink to="/products" className={({isActive}) => isActive ? 'active' : ''}>Products</NavLink></li>
+          <li><NavLink to="/contact" className={({isActive}) => isActive ? 'active' : ''}>Contact</NavLink></li>
+        </ul>
+
+        <div className="navbar__right">
+          <a href="tel:+94123456789" className="navbar__phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+94 123 456 789</span>
+          </a>
+          <a href="tel:+94123456789" className="btn btn-green navbar__cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Us
+          </a>
         </div>
 
-        <div className="nav-actions desktop-only">
-          <div className="phone-wrapper">
-            <Phone size={18} className="phone-icon text-primary" />
-            <span>+1 (555) 123-4567</span>
-          </div>
-          <button className="btn btn-primary hover-lift">Call Us</button>
-        </div>
-
-        <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        <button className="navbar__burger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+          <span></span><span></span><span></span>
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="mobile-menu glass">
-          <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Home</NavLink>
-          <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className="mobile-link">About</NavLink>
-          <NavLink to="/services" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Services</NavLink>
-          <NavLink to="/products" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Products</NavLink>
-          <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Contact</NavLink>
-          <div className="mobile-actions">
-            <button className="btn btn-primary w-full">Call Us</button>
-          </div>
+      {mobileOpen && (
+        <div className="navbar__mobile">
+          <NavLink to="/" onClick={() => setMobileOpen(false)}>Home</NavLink>
+          <NavLink to="/about" onClick={() => setMobileOpen(false)}>About</NavLink>
+          <NavLink to="/services" onClick={() => setMobileOpen(false)}>Services</NavLink>
+          <NavLink to="/products" onClick={() => setMobileOpen(false)}>Products</NavLink>
+          <NavLink to="/contact" onClick={() => setMobileOpen(false)}>Contact</NavLink>
+          <a href="tel:+94123456789" className="btn btn-green" style={{marginTop:'0.5rem',width:'100%'}}>Call Us</a>
         </div>
       )}
     </nav>
