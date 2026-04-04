@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -8,6 +8,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
+import Loader from './components/Loader';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -31,14 +32,31 @@ function AnimatedRoutes() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Initial loading simulation
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
-      <Navbar />
-      <main style={{ minHeight: '60vh' }}>
-        <AnimatedRoutes />
-      </main>
-      <Footer />
+      <AnimatePresence>
+        {loading && <Loader />}
+      </AnimatePresence>
+      {!loading && (
+        <>
+          <Navbar />
+          <main style={{ minHeight: '60vh' }}>
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+        </>
+      )}
     </Router>
   );
 }
