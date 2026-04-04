@@ -38,7 +38,7 @@
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 1.5rem; /* Reduced from 4rem */
 }
 
 .about-hero__inner {
@@ -107,7 +107,7 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1.75rem;
+  padding: 1.5rem; /* Reduced from 1.75rem */
 }
 
 .mv-card__icon {
@@ -243,13 +243,16 @@
 }
 @media (max-width: 768px) {
   .about-hero__title { font-size: 2.25rem; }
-  .about-hero__text { width: 100%; max-width: 100%; }
+  .about-hero__text { width: 100%; max-width: 100%; min-width: unset; }
   .about-hero__overlay {
-    background: linear-gradient(to bottom, rgba(244,248,251,0.95) 0%, rgba(244,248,251,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(244,248,251,0.95) 0%, rgba(244,248,251,0.85) 100%);
   }
-  .why-us__grid { grid-template-columns: 1fr; }
-  .about-stats-banner__inner { grid-template-columns: 1fr 1fr; }
+  .mv-section { margin-top: -2rem; }
+  .why-us__grid { grid-template-columns: 1fr 1fr; }
+  .about-stats-banner__inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 }
 @media (max-width: 480px) {
+  .why-us__grid { grid-template-columns: 1fr; }
   .about-stats-banner__inner { grid-template-columns: 1fr; }
+  .mv-card { flex-direction: column; align-items: center; text-align: center; }
 }

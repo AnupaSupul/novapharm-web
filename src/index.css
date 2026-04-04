@@ -204,4 +204,5 @@ img {
 @media (max-width: 768px) {
   .section-title { font-size: 1.75rem; }
   .section { padding: 3rem 0; }
+  .container { padding: 0 1rem; } /* Gain more horizontal space */
 }
