@@ -9,7 +9,7 @@ const About = () => {
           <img src="/hero-about.png" alt="About NovaPharm" />
         </div>
         <div className="about-hero__overlay"></div>
-        <div className="container about-hero__inner">
+        <div className="about-hero__container about-hero__inner">
           <div className="about-hero__text">
             <span className="section-label text-gradient">ABOUT US</span>
             <h1 className="about-hero__title">Caring for you,<br/><span className="text-gradient">every step of the way.</span></h1>
