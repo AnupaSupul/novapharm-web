@@ -1,7 +1,22 @@
+/* Contact Badge */
+.contact-badge-label {
+  display: inline-block;
+  background: white;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  color: var(--primary);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+}
+
 /* Contact Hero Badges */
 .contact-hero-badges {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-top: 1.5rem;
   flex-wrap: wrap;
 }
@@ -20,8 +35,17 @@
   border-radius: 50%;
   display: inline-block;
 }
+.cbadge-dot.green { background: var(--secondary); }
+.cbadge-dot.blue { background: var(--primary); }
 
 /* Info Grid */
+.contact-info-section {
+  position: relative;
+  z-index: 20;
+  margin-top: -3rem;
+  padding-bottom: 1rem;
+}
+
 .contact-info-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -51,7 +75,16 @@
   padding: 2.5rem;
 }
 
-.contact-form-card h2 { margin-bottom: 0.5rem; }
+.contact-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-header h2 { margin: 0; }
+
+.leaf-icon { font-size: 2rem; }
 
 .contact-form__desc {
   color: var(--text-body);
@@ -94,6 +127,12 @@
   padding: 1rem;
   margin-top: 0.5rem;
   font-size: 1rem;
+  background: var(--secondary);
+  box-shadow: 0 4px 15px rgba(46,204,113,0.3);
+}
+
+.contact-form__submit:hover {
+  background: var(--secondary-dark);
 }
 
 /* Map */
@@ -145,6 +184,22 @@
   border-radius: 12px;
   background: white;
 }
+
+.map-label__links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.map-label__links a {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+.map-label__links a:hover { color: var(--primary); }
 
 /* CTA */
 .contact-cta {

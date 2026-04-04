@@ -10,21 +10,27 @@ const Contact = () => {
         </div>
         <div className="page-hero__overlay"></div>
         <div className="container page-hero__inner">
-          <span className="section-label" style={{background:'white',display:'inline-block',padding:'0.25rem 0.75rem',borderRadius:'var(--radius-full)',color:'var(--primary)',fontSize:'0.75rem'}}>CONTACT US</span>
+          <span className="contact-badge-label">CONTACT US</span>
           <h1 className="page-hero__title" style={{marginTop:'0.75rem'}}>We're here to<br/><span className="text-gradient">help you.</span></h1>
           <p className="page-hero__desc">
             Visit us, call us, or message us anytime.<br/>Your health matters to us.
           </p>
           <div className="contact-hero-badges">
-            <span className="contact-hero-badge"><span className="cbadge-dot" style={{background:'var(--secondary)'}}></span> Quick Response</span>
-            <span className="contact-hero-badge"><span className="cbadge-dot" style={{background:'var(--secondary)'}}></span> Friendly Support</span>
-            <span className="contact-hero-badge"><span className="cbadge-dot" style={{background:'var(--secondary)'}}></span> Always Here</span>
+            <span className="contact-hero-badge"><span className="cbadge-dot green"></span> Quick Response</span>
+            <span className="contact-hero-badge"><span className="cbadge-dot green"></span> Friendly Support</span>
+            <span className="contact-hero-badge"><span className="cbadge-dot green"></span> Always Here</span>
           </div>
+        </div>
+        <div className="page-hero__wave">
+          <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,60 C360,100 720,10 1080,60 C1260,85 1380,75 1440,60 L1440,100 L0,100 Z" fill="#1E88E5" opacity="0.12"/>
+            <path d="M0,75 C360,100 720,30 1080,75 C1260,90 1380,85 1440,75 L1440,100 L0,100 Z" fill="var(--bg)"/>
+          </svg>
         </div>
       </section>
 
       {/* Info Cards */}
-      <section className="contact-info-section" style={{position:'relative',zIndex:20,marginTop:'-4rem'}}>
+      <section className="contact-info-section">
         <div className="container">
           <div className="contact-info-grid">
             {[
@@ -48,9 +54,11 @@ const Contact = () => {
       {/* Form + Map */}
       <section className="contact-main section">
         <div className="container contact-main__inner">
-          {/* Form */}
           <div className="contact-form-card glass-card">
-            <h2>Send Us a Message</h2>
+            <div className="contact-form-header">
+              <h2>Send Us a Message</h2>
+              <span className="leaf-icon">🌿</span>
+            </div>
             <p className="contact-form__desc">Fill out the form below and we'll get back to you as soon as possible.</p>
             <form className="contact-form" onSubmit={e => e.preventDefault()}>
               <div className="form-row">
@@ -69,17 +77,15 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Map */}
           <div className="contact-map-card glass-card">
             <div style={{display:'flex',alignItems:'center',gap:'0.5rem',marginBottom:'0.75rem'}}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <h2 style={{margin:0}}>Find Us</h2>
             </div>
-            <p style={{color:'var(--text-body)',marginBottom:'1rem',fontSize:'0.9rem'}}>We're easy to find. Come visit us!</p>
-            
+            <p style={{color:'var(--text-body)',marginBottom:'1.5rem',fontSize:'0.9rem'}}>We're easy to find. Come visit us!</p>
             <div className="map-visual">
               <div className="map-pin">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="var(--primary)"/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="var(--primary)"/></svg>
               </div>
               <div className="map-label glass-card" style={{boxShadow:'var(--shadow-lg)'}}>
                 <div style={{display:'flex',gap:'0.75rem',alignItems:'center'}}>
@@ -90,6 +96,10 @@ const Contact = () => {
                     <strong style={{fontSize:'0.9rem'}}>NovaPharm Pharmacy</strong>
                     <p style={{fontSize:'0.75rem',color:'var(--text-muted)',margin:0}}>128 Health Avenue, Negombo</p>
                   </div>
+                </div>
+                <div className="map-label__links">
+                  <a href="#">Get Directions</a>
+                  <a href="#" className="link-btn" style={{fontSize:'0.85rem'}}>Get Directions →</a>
                 </div>
               </div>
             </div>
