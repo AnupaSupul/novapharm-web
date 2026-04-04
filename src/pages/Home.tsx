@@ -10,7 +10,7 @@ const Home = () => {
           <img src="/hero-home.png" alt="NovaPharm Pharmacy" />
         </div>
         <div className="hero__overlay"></div>
-        <div className="container hero__inner">
+        <div className="home-hero__container hero__inner">
           <div className="hero__content">
             <div className="hero__badge">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>

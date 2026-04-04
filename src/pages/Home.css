@@ -29,14 +29,19 @@
   z-index: 1;
   background: linear-gradient(
     to right,
-    #f4f8fb 0%,
-    #f4f8fb 25%,
-    rgba(244,248,251,0.95) 35%,
-    rgba(244,248,251,0.75) 50%,
-    rgba(244,248,251,0.3) 65%,
-    rgba(244,248,251,0.05) 80%,
+    rgba(244,248,251, 1) 0%,
+    rgba(244,248,251, 0.95) 30%,
+    rgba(244,248,251, 0.6) 45%,
+    rgba(244,248,251, 0.1) 60%,
     transparent 100%
   );
+}
+
+.home-hero__container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 4rem;
 }
 
 .hero__inner {
@@ -47,10 +52,10 @@
   width: 100%;
 }
 
-/* KEY FIX: Content stays firmly on the LEFT, never wider than 45% */
+/* KEY FIX: Content stays firmly on the LEFT, never wider than 55% */
 .hero__content {
-  max-width: 480px;
-  width: 45%;
+  max-width: 550px;
+  width: 55%;
   min-width: 320px;
 }
 
