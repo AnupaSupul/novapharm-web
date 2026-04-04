@@ -6,11 +6,11 @@
 
 /* Visibility Control */
 .footer__mobile {
-  display: none;
+  display: none !important;
 }
 
 .footer__desktop {
-  display: block;
+  display: block !important;
 }
 
 /* Desktop Styles (Unchanged) */
@@ -189,10 +189,10 @@
     padding-top: 0;
   }
   .footer__desktop {
-    display: none;
+    display: none !important;
   }
   .footer__mobile {
-    display: block;
+    display: block !important;
   }
   .footer-simple__nav {
     gap: 1rem;
