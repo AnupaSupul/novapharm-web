@@ -10,7 +10,7 @@ const Contact = () => {
           <img src="/hero-contact.png" alt="Contact Us" />
         </div>
         <div className="contact-hero__overlay"></div>
-        <div className="container contact-hero__inner">
+        <div className="contact-hero__container contact-hero__inner">
           <div className="contact-hero__text">
             <span className="contact-badge-label">CONTACT US</span>
             <h1 className="contact-hero__title" style={{marginTop:'1.25rem'}}>We're here to<br/><span className="text-gradient">help you.</span></h1>

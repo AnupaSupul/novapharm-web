@@ -31,7 +31,7 @@ const Products = () => {
           <img src="/hero-products.png" alt="Our Products" />
         </div>
         <div className="products-hero__overlay"></div>
-        <div className="container products-hero__inner">
+        <div className="products-hero__container products-hero__inner">
           <div className="products-hero__text">
             <span className="section-label text-gradient">OUR PRODUCTS</span>
             <h1 className="products-hero__title">Quality products for<br/>a healthier you. <span>💚</span></h1>

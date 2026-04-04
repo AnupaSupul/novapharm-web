@@ -10,7 +10,7 @@ const Services = () => {
           <img src="/hero-services.png" alt="Our Services" />
         </div>
         <div className="services-hero__overlay"></div>
-        <div className="container services-hero__inner">
+        <div className="services-hero__container services-hero__inner">
           <div className="services-hero__text">
             <span className="section-label text-gradient">OUR SERVICES</span>
             <h1 className="services-hero__title">Here for your health,<br/><span className="text-gradient">every day.</span></h1>
