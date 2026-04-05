@@ -345,12 +345,7 @@
   .hero__desc {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .hero__overlay {
-    background: linear-gradient(to bottom,
-        rgba(244, 248, 251, 0.95) 0%,
-        rgba(244, 248, 251, 0.85) 100%);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
   }
 
   .features__grid {
