@@ -26,22 +26,7 @@ const Loader = () => {
             transition={{ duration: 1.2, ease: [0.6, 0.05, -0.01, 0.9] }}
           />
         </div>
-        <div className="loader-bar-container">
-          <motion.div 
-            className="loader-bar"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-          />
-        </div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="loader-text"
-        >
-          Caring for your health...
-        </motion.p>
+
       </div>
     </motion.div>
   );
