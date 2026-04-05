@@ -345,12 +345,7 @@
   .hero__desc {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .hero__overlay {
-    background: linear-gradient(to bottom,
-        rgba(244, 248, 251, 0.95) 0%,
-        rgba(244, 248, 251, 0.85) 100%);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
   }
 
   .features__grid {
@@ -419,3 +414,231 @@
     width: 100%;
   }
 }
+
+/* =========================================
+   MOBILE VIEW EXACT MATCH (appended)
+========================================= */
+.home-mobile {
+  background-color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 2rem;
+}
+
+.hm-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hm-hero__bg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  background: url('/hero-home.png') center top/cover no-repeat;
+}
+
+.hm-hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  transform: translateY(1px);
+}
+
+.hm-hero__content {
+  position: relative;
+  z-index: 10;
+}
+
+.hm-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+}
+
+.hm-hero__badge span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.70rem;
+  color: #2ECC71;
+  letter-spacing: 1px;
+}
+
+.hm-hero__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.hm-text-blue {
+  color: #38bdf8;
+}
+
+.hm-hero__emojis {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.hm-hero__desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hm-hero__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.hm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hm-btn--solid-green {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.hm-btn--outline-green {
+  background: white;
+  color: #10b981;
+  border: 1.5px solid #10b981;
+}
+
+.hm-btn--outline-blue {
+  background: white;
+  color: #3b82f6;
+  border: 1.5px solid #3b82f6;
+}
+
+.hm-features {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hm-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 25%;
+}
+
+.hm-feature__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+
+.hm-feature p {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #475569;
+  line-height: 1.2;
+}
+
+.hm-about {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  margin-bottom: 2rem;
+}
+
+.hm-about h3 {
+  font-size: 1.1rem;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.hm-about p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.hm-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hm-stat {
+  text-align: center;
+}
+
+.hm-stat h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin-bottom: 0.25rem;
+}
+
+.hm-stat p {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-bottom: 0;
+}
+
+.hm-cta {
+  background: linear-gradient(135deg, #10b981 0%, #0284c7 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.hm-cta__content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.hm-cta__content p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.hm-cta__icon {
+  background: rgba(255,255,255,0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

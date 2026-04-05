@@ -204,5 +204,25 @@ img {
 @media (max-width: 768px) {
   .section-title { font-size: 1.75rem; }
   .section { padding: 3rem 0; }
-  .container { padding: 0 1rem; } /* Gain more horizontal space */
+  .container { padding: 0 1rem; }
+}
+
+/* ========== EXCLUSIVE DESKTOP/MOBILE ISOLATION ========== */
+.mobile-view {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    /* Make space for the bottom navigation bar */
+    padding-bottom: 70px;
+  }
+  
+  .desktop-view {
+    display: none !important;
+  }
+  
+  .mobile-view {
+    display: block !important;
+  }
 }

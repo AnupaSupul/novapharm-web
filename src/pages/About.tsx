@@ -4,7 +4,7 @@ import './About.css';
 const About = () => {
   return (
     <PageWrapper>
-      <div className="about-page">
+      <div className="about-page desktop-view">
         {/* Hero - compact, NOT full viewport */}
         <section className="about-hero">
           <div className="about-hero__bg">
@@ -116,6 +116,85 @@ const About = () => {
           </div>
         </section>
       </div>
+
+      {/* =========================================
+          MOBILE VIEW (Mockup Exact Match) 
+      ========================================= */}
+      <div className="about-mobile mobile-view">
+        <div className="am-header-bg">
+          <svg className="pm-hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,40 C480,140 960,140 1440,40 L1440,120 L0,120 Z" fill="#1E88E5" />
+            <path d="M0,60 C480,160 960,160 1440,60 L1440,120 L0,120 Z" fill="#f8fafc" />
+          </svg>
+        </div>
+        
+        <div className="container am-content">
+          <p className="am-label">ABOUT US</p>
+          <h1 className="am-title">
+            Caring for you,<br/>
+            <span className="am-text-blue">every step</span><br/>
+            <span className="am-text-green">of the way.</span>
+          </h1>
+          
+          <p className="am-desc">
+            At NovaPharm, we believe that good health is the foundation of a happy life. We are committed to providing trusted medicines, expert advice, and wellness solutions that help you and better lives. <em>your family.</em>
+          </p>
+          
+          <div className="am-emojis">
+            <span>💚</span><span>💙</span>
+          </div>
+
+          <div className="am-mv-card">
+             <div className="am-mv-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+             <div className="am-mv-text">
+               <h3>Our Mission</h3>
+               <p>To deliver quality healthcare products with honest care, improving lives every day.</p>
+             </div>
+          </div>
+
+          <div className="am-mv-card">
+             <div className="am-mv-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+             <div className="am-mv-text">
+               <h3>Our Vision</h3>
+               <p>To be your most trusted health partner in the community, known for care, quality, and convenience.</p>
+             </div>
+          </div>
+
+          <div className="am-why">
+            <h3 className="am-why-title">Why Choose Us?</h3>
+            <div className="am-why-grid">
+              <div className="am-why-item">
+                <div className="am-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E88E5" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <p><strong>Quality</strong><br/>Products</p>
+              </div>
+              <div className="am-why-item">
+                <div className="am-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E88E5" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+                <p><strong>Experienced</strong><br/>Pharmacists</p>
+              </div>
+              <div className="am-why-item">
+                <div className="am-why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E88E5" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                <p><strong>Customer</strong><br/>First</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="am-stats-banner">
+             <div className="am-stat">
+               <h4>10+</h4>
+               <p>Years of<br/>Service</p>
+             </div>
+             <div className="am-stat">
+               <h4>5000+</h4>
+               <p>Happy<br/>Customers</p>
+             </div>
+             <div className="am-stat">
+               <h4>50+</h4>
+               <p>Healthcare<br/>Brands</p>
+             </div>
+          </div>
+        </div>
+      </div>
+
     </PageWrapper>
   );
 };
