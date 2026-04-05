@@ -194,10 +194,15 @@ const Home = () => {
       ========================================= */}
       <div className="home-mobile mobile-view">
         <div className="hm-hero">
-          <div className="hm-hero__bg"></div>
+          <div className="hm-hero__bg">
+            <svg className="hm-hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+              <path d="M0,40 C480,140 960,140 1440,40 L1440,120 L0,120 Z" fill="#1E88E5" />
+              <path d="M0,60 C480,160 960,160 1440,60 L1440,120 L0,120 Z" fill="#f8fafc" />
+            </svg>
+          </div>
           
           <div className="container hm-hero__content">
-            <div className="hm-hero__badge">
+            <div className="hm-hero__badge" style={{marginTop: '-24px'}}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
               <span>YOUR HEALTH PARTNER</span>
             </div>

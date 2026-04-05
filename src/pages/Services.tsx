@@ -168,8 +168,10 @@ const Services = () => {
       <div className="services-mobile mobile-view">
         <div className="sm-hero">
           <div className="sm-hero-bg">
-            <img src="/hero-services.png" alt="Services" />
-            <div className="sm-hero-overlay"></div>
+            <svg className="pm-hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+              <path d="M0,40 C480,140 960,140 1440,40 L1440,120 L0,120 Z" fill="#1E88E5" />
+              <path d="M0,60 C480,160 960,160 1440,60 L1440,120 L0,120 Z" fill="#f8fafc" />
+            </svg>
           </div>
           
           <div className="container" style={{position:'relative', zIndex: 10, paddingTop: '1.5rem'}}>

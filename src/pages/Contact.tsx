@@ -162,8 +162,9 @@ const Contact = () => {
       ========================================= */}
       <div className="contact-mobile mobile-view">
         <div className="cm-header-bg">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-             <path d="M0,0 L100,0 L100,80 C50,100 0,60 0,80 Z" fill="#eef2f6" />
+          <svg className="pm-hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,40 C480,140 960,140 1440,40 L1440,120 L0,120 Z" fill="#1E88E5" />
+            <path d="M0,60 C480,160 960,160 1440,60 L1440,120 L0,120 Z" fill="#f8fafc" />
           </svg>
         </div>
         

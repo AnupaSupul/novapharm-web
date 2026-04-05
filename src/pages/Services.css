@@ -311,26 +311,20 @@
 }
 
 .sm-hero-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 480px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  background: url('/hero-services.png') center top/cover no-repeat;
   z-index: 0;
 }
 
-.sm-hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
-.sm-hero-overlay {
+.pm-hero-wave {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(248, 250, 252, 0.6) 0%, rgba(248, 250, 252, 0.9) 60%, rgba(248, 250, 252, 1) 100%);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  transform: translateY(1px);
 }
 
 .sm-label {
