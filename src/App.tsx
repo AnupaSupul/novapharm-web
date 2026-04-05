@@ -9,6 +9,7 @@ import Services from './pages/Services';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Loader from './components/Loader';
+import BottomNav from './components/BottomNav';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -55,6 +56,7 @@ function App() {
             <AnimatedRoutes />
           </main>
           <Footer />
+          <BottomNav />
         </>
       )}
     </Router>

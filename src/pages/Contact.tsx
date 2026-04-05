@@ -5,7 +5,7 @@ import './Contact.css';
 const Contact = () => {
   return (
     <PageWrapper>
-      <div className="contact-page">
+      <div className="contact-page desktop-view">
         {/* Hero - compact */}
         <section className="contact-hero">
           <div className="contact-hero__bg">
@@ -156,6 +156,87 @@ const Contact = () => {
           </div>
         </section>
       </div>
+
+      {/* =========================================
+          MOBILE VIEW (Mockup Exact Match) 
+      ========================================= */}
+      <div className="contact-mobile mobile-view">
+        <div className="cm-header-bg">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+             <path d="M0,0 L100,0 L100,80 C50,100 0,60 0,80 Z" fill="#eef2f6" />
+          </svg>
+        </div>
+        
+        <div className="container cm-content">
+          <p className="cm-label">CONTACT US</p>
+          <h1 className="cm-title">
+            <span className="cm-text-blue">We're here to</span><br/>
+            <span className="cm-text-green">help you.</span>
+          </h1>
+          
+          <p className="cm-desc">
+            Visit us, call us, or message us<br/>Your health matters<br/>to us.
+          </p>
+          
+          <div className="cm-checks">
+            <div className="cm-check">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Friendly Support</span>
+            </div>
+            <div className="cm-check">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Always Here</span>
+            </div>
+          </div>
+          
+          <div className="cm-info-list">
+            <div className="cm-info-card">
+              <div className="cm-info-icon" style={{background:'#3b82f6'}}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div className="cm-info-text">
+                <h3>Phone</h3>
+                <p>+94 70 430 9505</p>
+              </div>
+            </div>
+            
+            <div className="cm-info-card">
+              <div className="cm-info-icon" style={{background:'#10b981'}}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div className="cm-info-text">
+                <h3>Email</h3>
+                <p>info@novapharm.com</p>
+              </div>
+            </div>
+            
+            <div className="cm-info-card">
+              <div className="cm-info-icon" style={{background:'#3b82f6'}}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div className="cm-info-text">
+                <h3>Address</h3>
+                <p>No. 45, Hospital Road,<br/>Matara, Sri Lanka</p>
+              </div>
+            </div>
+            
+            <div className="cm-info-card">
+              <div className="cm-info-icon" style={{background:'#10b981'}}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div className="cm-info-text">
+                <h3>Hours</h3>
+                <p>Mon - Sat: 9:00 AM - 9:00 PM<br/>Sun: 10:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="cm-form">
+            <h3>Send Us a Message</h3>
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Email Address" />
+            <textarea placeholder="Message" rows={4}></textarea>
+            <button>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </div>
+          
+        </div>
+      </div>
+
     </PageWrapper>
   );
 };

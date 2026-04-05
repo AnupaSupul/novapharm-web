@@ -256,3 +256,179 @@
   .about-stats-banner__inner { grid-template-columns: 1fr; }
   .mv-card { flex-direction: column; align-items: center; text-align: center; }
 }
+
+/* =========================================
+   MOBILE VIEW EXACT MATCH (appended)
+========================================= */
+.about-mobile {
+  background-color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.am-header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  z-index: 0;
+}
+
+.am-content {
+  position: relative;
+  z-index: 10;
+  padding-top: 1.5rem;
+}
+
+.am-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.70rem;
+  color: #3b82f6;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.am-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 1.2rem;
+}
+
+.am-text-blue {
+  color: #38bdf8;
+}
+
+.am-text-green {
+  color: #10b981;
+}
+
+.am-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.am-emojis {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.am-mv-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  margin-bottom: 1rem;
+}
+
+.am-mv-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.am-mv-text h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.am-mv-text p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.am-why {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.am-why-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.am-why-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.am-why-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 33%;
+}
+
+.am-why-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+
+.am-why-item p {
+  font-size: 0.75rem;
+  color: #475569;
+  line-height: 1.25;
+}
+
+.am-stats-banner {
+  background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.am-stat {
+  text-align: center;
+  flex: 1;
+}
+
+.am-stat h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.am-stat p {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  line-height: 1.2;
+}

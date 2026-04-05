@@ -26,7 +26,7 @@ const Products = () => {
 
   return (
     <PageWrapper>
-      <div className="products-page">
+      <div className="products-page desktop-view">
         {/* Hero - shorter, compact */}
         <section className="products-hero">
           <div className="products-hero__bg">
@@ -167,6 +167,92 @@ const Products = () => {
           </div>
         </section>
       </div>
+
+      {/* =========================================
+          MOBILE VIEW (Mockup Exact Match) 
+      ========================================= */}
+      <div className="products-mobile mobile-view">
+        <div className="pm-header-bg">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+             <path d="M0,0 L100,0 L100,80 C50,100 0,60 0,80 Z" fill="#eef2f6" />
+          </svg>
+        </div>
+        
+        <div className="container pm-content">
+          <p className="pm-label">OUR PRODUCTS</p>
+          <h1 className="pm-title">
+            Quality products<br/>
+            for a<br/>
+            <span className="pm-text-blue">healthier you.</span>
+          </h1>
+          
+          <div className="pm-emojis">
+            <span>💚</span>
+          </div>
+          
+          <p className="pm-desc">
+            Explore our wide range of trusted medicines, supplements, and daily health essentials.
+          </p>
+          
+          <div className="pm-search">
+            <div className="pm-search-input">
+              <input type="text" placeholder="Search products..." value={search} onChange={e => setSearch(e.target.value)} />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            
+            <select className="pm-select">
+              <option>All Categories</option>
+              {categories.slice(1).map(c => <option key={c}>{c}</option>)}
+            </select>
+            
+            <select className="pm-select">
+              <option>All Brands</option>
+            </select>
+          </div>
+          
+          <div className="pm-pills">
+            {categories.map(c => (
+              <button key={c} className={`pm-pill ${active === c ? 'pm-pill-active' : ''}`} onClick={() => setActive(c)}>{c === 'All Products' ? 'All' : c}</button>
+            ))}
+          </div>
+          
+          <div className="pm-grid">
+            {filtered.map(p => (
+              <div key={p.id} className="pm-card">
+                <div className="pm-card-img">
+                  <div className="pm-placeholder">{p.letter}</div>
+                </div>
+                
+                <h3 className="pm-card-title">{p.name}</h3>
+                <p className="pm-card-desc">{p.desc}</p>
+                <p className="pm-card-price">{p.price}</p>
+                
+                <button className="pm-btn-add">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add
+                </button>
+              </div>
+            ))}
+          </div>
+          
+          <div className="pm-bottom-features">
+            <div className="pm-bf">
+               <div className="pm-bf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+               <p>Trusted<br/>Quality</p>
+            </div>
+            <div className="pm-bf">
+               <div className="pm-bf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+               <p>Expert<br/>Approved</p>
+            </div>
+            <div className="pm-bf">
+               <div className="pm-bf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 012 2v6a2 2 0 01-2 2h-3"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+               <p>Fast<br/>Delivery</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
     </PageWrapper>
   );
 };

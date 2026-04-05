@@ -15,7 +15,7 @@ const Services = () => {
 
   return (
     <PageWrapper>
-      <div className="services-page">
+      <div className="services-page desktop-view">
         {/* Hero - compact, NOT full viewport */}
         <section className="services-hero">
           <div className="services-hero__bg">
@@ -161,6 +161,101 @@ const Services = () => {
           </div>
         </section>
       </div>
+
+      {/* =========================================
+          MOBILE VIEW (Mockup Exact Match) 
+      ========================================= */}
+      <div className="services-mobile mobile-view">
+        <div className="sm-hero">
+          <div className="sm-hero-bg">
+            <img src="/hero-services.png" alt="Services" />
+            <div className="sm-hero-overlay"></div>
+          </div>
+          
+          <div className="container" style={{position:'relative', zIndex: 10, paddingTop: '1.5rem'}}>
+            <p className="sm-label">OUR SERVICES</p>
+            <h1 className="sm-title">
+              Here for<br/>
+              <span className="sm-text-blue">health,</span><br/>
+              every day.
+            </h1>
+            
+            <p className="sm-desc">
+              We provide a wide range of healthcare services to support you and your family's well-being.
+            </p>
+            
+            <div className="sm-trust">
+              <div className="sm-trust-item">
+                 <div className="sm-trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                 <div className="sm-trust-text">
+                   <strong>Trusted Care</strong>
+                   <span>Always reliable</span>
+                 </div>
+              </div>
+              <div className="sm-trust-item">
+                 <div className="sm-trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+                 <div className="sm-trust-text">
+                   <strong>Expert Team</strong>
+                   <span>Always here to help</span>
+                 </div>
+              </div>
+              <div className="sm-trust-item">
+                 <div className="sm-trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+                 <div className="sm-trust-text">
+                   <strong>Better Health</strong>
+                   <span>Our top priority</span>
+                 </div>
+              </div>
+            </div>
+            
+            <div className="sm-list">
+               <div className="sm-card">
+                  <div className="sm-card-icon" style={{background:'#fee2e2'}}>💊</div>
+                  <div className="sm-card-text">
+                    <h3>Prescription Filling</h3>
+                    <p>Fast, accurate prescription services with expert guidance from our pharmacists.</p>
+                  </div>
+               </div>
+               
+               <div className="sm-card">
+                  <div className="sm-card-icon" style={{background:'#dbeafe'}}>👨‍⚕️</div>
+                  <div className="sm-card-text">
+                    <h3>Health Consultations</h3>
+                    <p>One-on-one professional advice for managing your medications and health conditions.</p>
+                  </div>
+               </div>
+               
+               <div className="sm-card">
+                  <div className="sm-card-icon" style={{background:'#e0e7ff'}}>💉</div>
+                  <div className="sm-card-text">
+                    <h3>Immunizations</h3>
+                    <p>Stay protected with our walk-in vaccination services for flu, COVID-19, and travel.</p>
+                  </div>
+               </div>
+               
+               <div className="sm-card">
+                  <div className="sm-card-icon" style={{background:'#dcfce7'}}>🩹</div>
+                  <div className="sm-card-text">
+                    <h3>Over-the-Counter</h3>
+                    <p>A wide range of OTC medicines, vitamins, and supplements.</p>
+                  </div>
+               </div>
+            </div>
+            
+            <div className="sm-help">
+               <div className="sm-help-content">
+                 <h3>Need Help?</h3>
+                 <p>Our pharmacists are ready to assist you.</p>
+               </div>
+               <div className="sm-help-icon">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+               </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
     </PageWrapper>
   );
 };
